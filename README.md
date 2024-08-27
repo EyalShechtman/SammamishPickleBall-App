@@ -1,5 +1,5 @@
 # SammamishPickleBall-App
 Scheduling App for PickleBall for the city of SAMMAMISH(In Production)
 
-
-<img width="345" alt="Screenshot 2024-07-23 at 12 43 31 AM" src="https://github.com/user-attachments/assets/9ed87196-0ef1-498d-9bad-caa567604ec6">
+![Simulator Screenshot - iPhone 15 Pro - 2024-08-27 at 16 30 57](https://github.com/user-attachments/assets/1a01a82d-25a9-4d81-af9e-f148af883bd1)
+![Simulator Screenshot - iPhone 15 Pro - 2024-08-27 at 16 31 02](https://github.com/user-attachments/assets/811741a5-24b3-4683-ad98-8e44d8eed1bd)
