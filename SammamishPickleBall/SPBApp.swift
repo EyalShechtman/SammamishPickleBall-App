@@ -10,7 +10,7 @@ import Firebase
 import FirebaseAuth
 
 @main
-struct SammamishPickleBallApp: App {
+struct SPBApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
@@ -23,6 +23,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         FirebaseApp.configure()
+        print("configured FireBase")
 
         return true
     }

@@ -14,12 +14,14 @@ struct AuthDataResultModel {
     let email: String?
     let photoUrl: String?
     let name: String?
+    let level: Int
 
-    init(user: User, name: String? = nil) {
+    init(user: User, name: String? = nil, level: Int = 0) {
         self.uid = user.uid
         self.email = user.email
         self.photoUrl = user.photoURL?.absoluteString
         self.name = name
+        self.level = level
     }
 }
 
@@ -45,9 +47,9 @@ final class AuthenticationManager {
         return AuthDataResultModel(user: authDataResult.user)
     }
 
-    func addUserToDatabase(uid: String, name: String) async throws {
+    func addUserToDatabase(uid: String, name: String, level: Int) async throws {
         let ref = Database.database().reference().child("users").child(uid)
-        try await ref.setValue(["name": name])
+        try await ref.setValue(["name": name, "level": level])
     }
     
     func getUserData(uid: String) async throws -> [String: Any]? {
