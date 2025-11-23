@@ -1,0 +1,46 @@
+diff --git a/Users/nadyashechtman/Documents/Projects/multiplayer_code_collaboration/backend/tickets/COD-32/SammamishPickleBall/Newsletter/ArticleDetailView.swift.new b/Users/nadyashechtman/Documents/Projects/multiplayer_code_collaboration/backend/tickets/COD-32/SammamishPickleBall/Newsletter/ArticleDetailView.swift.new
+new file mode 100644
+index 0000000..4e0bc35
+--- /dev/null
++++ b/Users/nadyashechtman/Documents/Projects/multiplayer_code_collaboration/backend/tickets/COD-32/SammamishPickleBall/Newsletter/ArticleDetailView.swift.new
+@@ -0,0 +1,39 @@
++import SwiftUI
++struct ArticleDetailView: View {
++    let article: Article
++    var body: some View {
++        ScrollView {
++            VStack(alignment: .leading, spacing: 10) {
++                Text(article.title)
++                    .font(.largeTitle)
++                    .fontWeight(.bold)
++                Text(article.date, formatter: dateFormatter)
++                    .font(.subheadline)
++                    .foregroundColor(.gray)
++                Divider()
++                Text(article.content)
++                    .font(.body)
++            }
++            .padding()
++        }
++        .navigationTitle("Article Details")
++        .navigationBarTitleDisplayMode(.inline)
++    }
++    private var dateFormatter: DateFormatter {
++        let formatter = DateFormatter()
++        formatter.dateStyle = .long
++        formatter.timeStyle = .short
++        return formatter
++    }
++}
++struct ArticleDetailView_Previews: PreviewProvider {
++    static var previews: some View {
++        NavigationView {
++            ArticleDetailView(article: Article(
++                title: "Test Article Title",
++                date: Date(),
++                content: "This is a test article content. It should be long enough to demonstrate scrolling and basic text display. Here goes some more text to make it even longer and more realistic. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
++            ))
++        }
++    }
++}
+\ No newline at end of file

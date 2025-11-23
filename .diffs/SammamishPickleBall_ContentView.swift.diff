@@ -1,0 +1,41 @@
+diff --git a/Users/nadyashechtman/Documents/Projects/multiplayer_code_collaboration/backend/tickets/COD-32/SammamishPickleBall/ContentView.swift b/Users/nadyashechtman/Documents/Projects/multiplayer_code_collaboration/backend/tickets/COD-32/SammamishPickleBall/ContentView.swift.new
+index 948efb0..18c7b1c 100644
+--- a/Users/nadyashechtman/Documents/Projects/multiplayer_code_collaboration/backend/tickets/COD-32/SammamishPickleBall/ContentView.swift
++++ b/Users/nadyashechtman/Documents/Projects/multiplayer_code_collaboration/backend/tickets/COD-32/SammamishPickleBall/ContentView.swift.new
+@@ -1,24 +1,19 @@
+-//
+-//  ContentView.swift
+-//  SammamishPickleBall
+-//
+-//  Created by Nadya Shechtman on 7/16/24.
+-//
+-
+ import SwiftUI
+-
+ struct ContentView: View {
+     var body: some View {
+-        VStack {
+-            Image(systemName: "globe")
+-                .imageScale(.large)
+-                .foregroundStyle(.tint)
+-            Text("Hello, world!")
++        TabView {
++            // Placeholder for other content, e.g., a Home View
++            Text("Home View Content")
++                .tabItem {
++                    Label("Home", systemImage: "house.fill")
++                }
++            NewsletterView()
++                .tabItem {
++                    Label("Newsletter", systemImage: "newspaper.fill")
++                }
+         }
+-        .padding()
+     }
+ }
+-
+ #Preview {
+     ContentView()
+-}
++}
+\ No newline at end of file

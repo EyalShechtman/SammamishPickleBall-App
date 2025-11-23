@@ -1,0 +1,14 @@
+diff --git a/Users/nadyashechtman/Documents/Projects/multiplayer_code_collaboration/backend/tickets/COD-32/SammamishPickleBall/Newsletter/Article.swift.new b/Users/nadyashechtman/Documents/Projects/multiplayer_code_collaboration/backend/tickets/COD-32/SammamishPickleBall/Newsletter/Article.swift.new
+new file mode 100644
+index 0000000..7a915c4
+--- /dev/null
++++ b/Users/nadyashechtman/Documents/Projects/multiplayer_code_collaboration/backend/tickets/COD-32/SammamishPickleBall/Newsletter/Article.swift.new
+@@ -0,0 +1,7 @@
++import Foundation
++struct Article: Identifiable {
++    let id = UUID()
++    let title: String
++    let date: Date
++    let content: String
++}
+\ No newline at end of file

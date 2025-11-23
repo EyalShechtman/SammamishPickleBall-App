@@ -1,0 +1,71 @@
+diff --git a/Users/nadyashechtman/Documents/Projects/multiplayer_code_collaboration/backend/tickets/COD-32/SammamishPickleBall/Newsletter/NewsletterView.swift.new b/Users/nadyashechtman/Documents/Projects/multiplayer_code_collaboration/backend/tickets/COD-32/SammamishPickleBall/Newsletter/NewsletterView.swift.new
+new file mode 100644
+index 0000000..6acce58
+--- /dev/null
++++ b/Users/nadyashechtman/Documents/Projects/multiplayer_code_collaboration/backend/tickets/COD-32/SammamishPickleBall/Newsletter/NewsletterView.swift.new
+@@ -0,0 +1,64 @@
++import SwiftUI
++struct NewsletterView: View {
++    @State private var isSubscribed: Bool = false
++    let articles: [Article] = [
++        Article(title: "Tournament Update: Spring Championship", date: Date().addingTimeInterval(-86400 * 5), content: "Details about the recent Spring Championship and its winners."),
++        Article(title: "New Paddle Technologies for 2025", date: Date().addingTimeInterval(-86400 * 15), content: "An overview of the latest advancements in pickleball paddle technology."),
++        Article(title: "Interview with Local Pickleball Pro", date: Date().addingTimeInterval(-86400 * 30), content: "We sit down with local legend, Jane Doe, to discuss her training and tips."),
++        Article(title: "Upcoming Community Play Dates", date: Date().addingTimeInterval(-86400 * 45), content: "Information on new open play sessions starting next month.")
++    ]
++    var body: some View {
++        NavigationView {
++            VStack {
++                if isSubscribed {
++                    List(articles) { article in
++                        NavigationLink(destination: ArticleDetailView(article: article)) {
++                            VStack(alignment: .leading) {
++                                Text(article.title)
++                                    .font(.headline)
++                                Text(article.date, formatter: dateFormatter)
++                                    .font(.subheadline)
++                                    .foregroundColor(.gray)
++                            }
++                        }
++                    }
++                    .navigationTitle("Newsletter")
++                } else {
++                    Spacer()
++                    Image(systemName: "newspaper.fill")
++                        .resizable()
++                        .scaledToFit()
++                        .frame(width: 100, height: 100)
++                        .foregroundColor(.accentColor)
++                        .padding(.bottom, 20)
++                    Text("Unlock exclusive articles and tournament updates!")
++                        .font(.title2)
++                        .multilineTextAlignment(.center)
++                        .padding(.horizontal)
++                        .padding(.bottom, 30)
++                    Button("Subscribe Now") {
++                        isSubscribed = true
++                    }
++                    .font(.headline)
++                    .foregroundColor(.white)
++                    .padding()
++                    .frame(maxWidth: .infinity)
++                    .background(Color.accentColor)
++                    .cornerRadius(10)
++                    .padding(.horizontal)
++                    Spacer()
++                }
++            }
++        }
++    }
++    private var dateFormatter: DateFormatter {
++        let formatter = DateFormatter()
++        formatter.dateStyle = .medium
++        return formatter
++    }
++}
++struct NewsletterView_Previews: PreviewProvider {
++    static var previews: some View {
++        NewsletterView()
++    }
++}
+\ No newline at end of file
